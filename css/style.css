@@ -1,6 +1,6 @@
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	transition: all 0.5s;
 }
 p {
@@ -8,6 +8,12 @@ p {
 	font-size: 14px;
 	color: #4a4a4a;
 	line-height: 24px;
+}
+
+h3{
+	margin-top: 10px;
+	font-weight: 700;
+
 }
 a {
 	text-decoration: none!important;
@@ -44,7 +50,7 @@ a {
 }
 .section-heading h1 {
 	font-size: 22px;
-	font-weight: 700;
+	font-weight: 800;
 	color: #1e1e1e;
 	margin-top: 15px;
 }
@@ -170,7 +176,7 @@ a {
 }
 .featured-item h4 {
 	font-size: 17px;
-	font-weight: 700;
+	font-weight: 800;
 	color: #1e1e1e;
 	margin-top: 15px;
 	transition: all 0.5s;
@@ -447,6 +453,7 @@ a {
 }
 #carousel .slides li {
 	width: 150px!important;
+	
 }
 .single-product .right-content h4 {
 	font-size: 17px;
@@ -462,6 +469,7 @@ a {
 .single-product .right-content p {
 	margin-top: 20px;
 	margin-bottom: 30px;
+	margin-left: 20px;
 }
 .single-product .right-content span {
 	font-size: 14px;
@@ -551,6 +559,9 @@ a {
 	font-weight: 400;
 }
 
+h1{
+	font-weight: 800;
+}
 
 
 /* About Us Style */
@@ -736,5 +747,11 @@ a {
 		margin-top: 15px;
 		text-align: left;
 	} 
+
+}
+
+.section{
+	padding-top: 4%;
+	padding-bottom: 4%;
 
 }
