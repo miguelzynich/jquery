@@ -1,62 +1,71 @@
-// instancia jquery e evita conflitos
-// jQuery( function($){
-$(document).ready(function(){
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+            },
+            600: {
+                items: 2,
+                nav: false,
+            },
+            1000: {
+                items: 3,
+                nav: false,
+            },
+        },
+    });
 
-    $('.owl-carousel').owlCarousel();
+});
 
-    let titulos = $('h4') // tag
-   
-    let itens = $('.featured-item') // class
-    
-    let destaques = $('#featured') // id
-
-    console.log(titulos.first());
-
-    // Configuração de produtos
-
-    $('.featured-item a').addClass('btn btn-dark stretch-link');
-
-    $('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').addClass('active')
-    // $('.featured-item:first h4').removeClass('active')
-    // $('.featured-item:first h4').toggleClass('active')
-    // $('.featured-item:first h4').hide()
-    // $('.featured-item:first h4').show()
-    // $('.featured-item:first h4').fadeIn(2000)
-    // $('.featured-item:first h4').fadeOut()
-    //  $('.featured-item:first h4').css('color', '#f00')
-     
-     $('.featured-item h4').dblclick( function(){
-
-        $(this).css({
-            'color': '#f00',
-            'background': '#ff0',
-            'font-weight': '100',
-        });
-
-     });
-
-     /*
-      * Manipulação de eventos
-      */
-     $('.featured-item a').on('blur', function(event){
-
+    $('.featured-item a').on('blur', function (event) {
         event.preventDefault();
-
         alert('Produto esgotado');
+    });
 
-     })
-     
-     
-     
-     
+    $('.featured-item:nth(1)').hide(2000, function () {
+        alert($(this).find('h3').text() + ' esgotado');
+        $(this).show(2000, function () {
+            console.log($(this).find('h3').text() + ' em estoque');
+            
+            const duracao = 1000;
 
+            $(this)
+                .hide(duracao)
+                .show(duracao)
+                .fadeOut(duracao)
+                .fadeIn(duracao)
+                .fadeOut(duracao)
+                .fadeIn(duracao)
+                .fadeOut(duracao)
+                .fadeIn(duracao);
+        });
+    });
 
+$(' .nav-modal-open').on('click', function(e){
 
+    e.preventDefault();
 
+    let elem = $(this).attr('rel')
 
+    $('modal-body').html($('#'+elem).html())
 
+    $('modal-header h5.modal-title').html($('#modalId'))
+
+    myModal.show()
 
 })
+
+$('.form').on('submit', functin(e){
+
+    e.preventDefault()
+    
+    const name = $('.nome').val() 
+    const name = $('.nome').val() 
+
+    })
+
+
