@@ -19,8 +19,6 @@ $(document).ready(function () {
         },
     });
 
-});
-
     $('.featured-item a').on('blur', function (event) {
         event.preventDefault();
         alert('Produto esgotado');
@@ -45,27 +43,16 @@ $(document).ready(function () {
         });
     });
 
-$(' .nav-modal-open').on('click', function(e){
+    $('.nav-modal-open').on('click', function (e) {
+        e.preventDefault();
 
-    e.preventDefault();
+        let elem = $(this).attr('rel');
+        let modalTitle = $(this).text();
 
-    let elem = $(this).attr('rel')
+        $('.modal-body').html($('#' + elem).html());
+        $('.modal-header h5.modal-title').html(modalTitle);
 
-    $('modal-body').html($('#'+elem).html())
-
-    $('modal-header h5.modal-title').html($('#modalId'))
-
-    myModal.show()
-
-})
-
-$('.form').on('submit', functin(e){
-
-    e.preventDefault()
-    
-    const name = $('.nome').val() 
-    const name = $('.nome').val() 
-
-    })
-
-
+        let myModal = new bootstrap.Modal($('#modalId'));
+        myModal.show();
+    });
+});
