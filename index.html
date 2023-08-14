@@ -12,31 +12,40 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/images/header-logo.svg" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/header-logo.svg" alt="Logo do Site">
+            </a>
+            </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
-                            <span class="sr-only"></span>
-                        </a>
+                        <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Produtos</a>
+                        <a class="nav-link" href="products.html" rel="produto">Produtos</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre nós</a>
+                        <a href="#modalSobre" class="nav-link" data-bs-toggle="modal">Sobre nós</a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a href="#modalContato" class="nav-link" data-bs-toggle="modal">Contato</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html" rel="produto">Fale conosco</a>
                     </li>
                 </ul>
             </div>
         </div>
+        
     </nav>
     
     <div class="banner">
@@ -64,77 +73,95 @@
                 </div>
                 <div class="col-md-12">
                     <div class="owl-carousel owl-theme">
-                        <div class="featured-item">
-                            <img src="assets/images/item-01.jpg" alt="Item 1">
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-01.jpg" alt="Item 1"  style="min-width: 200px; min-height: 200px;">
+                            <div class="card-content flex-grow-1">
                             <h3>Moletom - Henry Jones</h3>
                             <h4>R$ 200,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-02.jpg" alt="Item 2">
-                            <h3>Tênis Gazelle 2</h3>
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-02.jpg" alt="Item 2" style="min-width: 200px; min-height: 200px;">
+                            <div class="card-content flex-grow-1">
+                            <h3>Tênis Adidas Gazelle 2</h3>
                             <h4>R$ 600,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-03.jpg" alt="Item 3">
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-03.jpg" alt="Item 3"style="min-width: 200px; min-height: 200px;">
+                            <div class="card-content flex-grow-1">
                             <h3>Tênis Busenitz Vulc 2.0</h3>
                             <h4>R$ 600,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-04.jpg" alt="Item 4">
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-04.jpg" alt="Item 4" style="min-width: 200px; min-height: 200px;">
+                            <div class="card-content flex-grow-1">
                             <h3>Camiseta Skate Feminina</h3>
                             <h4>R$ 229,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-05.jpg" alt="Item 5">
-                            <h3>Tênis Superstar</h3>
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-05.jpg" alt="Item 5" style="min-width: 200px; min-height: 200px;">
+                            <div class="card-content flex-grow-1">
+                            <h3>Tênis Adidas Superstar</h3>
                             <h4>R$ 499,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
+                            </div>    
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-06.jpg" alt="Item 6">
-                            <h3>Moletom Fleece</h3>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-06.jpg" alt="Item 6" style="min-width: 200px; min-width: 200px;">
+                            <div class="card-content flex-grow-1">
+                            <h3>Moletom Fleece Floral</h3>
                             <h4>R$ 449,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-07.jpg" alt="Item 7">
-                            <h3>Camiseta Shmoofoil</h3>
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-07.jpg" alt="Item 7" style="min-width: 200px; min-width: 200px;">
+                            <div class="card-content flex-grow-1">
+                            <h3>Camiseta Logo Shmoofoil</h3>
                             <h4>R$ 199,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-08.jpg" alt="Item 8">
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-08.jpg" alt="Item 8" style="min-width: 200px; min-width: 200px;">
+                            <div class="card-content flex-grow-1">
                             <h3>Camiseta Mettz World</h3>
                             <h4>R$ 179,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
                         </div>
-                        <div class="featured-item">
-                            <img src="assets/images/item-09.jpg" alt="Item 9">
+                    </div>
+                        <div class="featured-item card-spacing" style="m-3 p-3">
+                            <img src="assets/images/item-09.jpg" alt="Item 9" style="min-width: 200px; min-width: 200px;">
+                            <div class="card-content flex-grow-1">
                             <h3>Camiseta Originals</h3>
                             <h4>R$ 20,00</h4>
                             <a href="single-product.html">
                                 Comprar
                             </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,7 +174,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="logo">
-                        <img src="assets/images/header-logo." alt="">
+                        <img src="assets/images/header-logo.svg" alt="">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -186,10 +213,101 @@
                 </div>
             </div>
         </div>
+
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+          Launch
+        </button>
         
+        <div id="contato" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Body
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const modal = new bootstrap.Modal(document.getElementById('modalId'));
+            const nomeInput = document.getElementById("nome");
+            const helpNome = document.getElementById("helpNome");
+
+            nomeInput.addEventListener("input", function () {
+            if (nomeInput.value.trim() === "") {
+                helpNome.textContent = "Digite um nome válido";
+            } else {
+                helpNome.textContent = "";
+            }
+        });
+    });
+        
+        </script>
+
+            <div class="modal fade" id="modalContato" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleID">Contato</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="post" class="form">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" 
+                        aria-describedby="helpNome">
+                        <small id="helpNome" class="text-muted">Digite um Nome válido  
+                        </small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu e-mail" 
+                        aria-describedby="helpEmail">
+                        <small id="helpEmail" class="text-muted">
+                        Digite um E-mail válido</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary float-end">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="modal fade" id="modalSobre" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitleId">Sobre nós</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="'mb-3">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ab necessitatibus ipsum obcaecati, incidunt distinctio omnis dolores modi quaerat voluptatem aperiam 
+                            aspernatur nostrum nobis tempore, eligendi dicta esse cumque in.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ab necessitatibus ipsum obcaecati, incidunt distinctio omnis dolores modi quaerat voluptatem aperiam 
+                            aspernatur nostrum nobis tempore, eligendi dicta esse cumque in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+   
         <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="./vendor/owl/js/owl.js"></script>
         <script src="./js/custom.js"></script>
+
     </body>
     </html>
