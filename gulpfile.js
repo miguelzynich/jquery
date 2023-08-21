@@ -1,3 +1,4 @@
+const {series} = require('gulp')
 const gulp = require('gulp')
 const concat = require('gulp-concat')
 const cssmin = require('gulp-cssmin')
@@ -6,6 +7,7 @@ const uglify = require('gulp-uglify')
 const image = require('gulp-imagemin')
 const stripJs = require('gulp-strip-comments')
 const stripCss = require('gulp-strip-css-comments')
+const htmlmin = require('gulp-htmlmin')
 
 function tarefasCSS(cb) {
 
@@ -59,6 +61,14 @@ function tarefasImagem(){
         .pipe(gulp.dest('./dist/images'))
 }
 
+function tarefasHTML() {
+    return gulp.src('./src/**/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('./dist'));
+}
+
 exports.styles = tarefasCSS
 exports.scripts = tarefasJS
 exports.images = tarefasImagem
+
+exports.default = series( tarefasHTML, tarefasJS, tarefasCSS )
