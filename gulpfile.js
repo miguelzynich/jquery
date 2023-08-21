@@ -1,4 +1,4 @@
-const {series} = require('gulp')
+const {series, watch} = require('gulp')
 const gulp = require('gulp')
 const concat = require('gulp-concat')
 const cssmin = require('gulp-cssmin')
@@ -8,6 +8,9 @@ const image = require('gulp-imagemin')
 const stripJs = require('gulp-strip-comments')
 const stripCss = require('gulp-strip-css-comments')
 const htmlmin = require('gulp-htmlmin')
+const babel = require('gulp-babel')
+const browserSync = require('browser-sync').create()
+const reload = browserSync.reload
 
 function tarefasCSS(cb) {
 
@@ -33,9 +36,13 @@ function tarefasJS(){
             './node_modules/bootstrap/dist/js/bootstrap.js',
             './vendor/owl/js/owl.js',
             './vendor/jquery-mask/jquery.mask.js',
-            './vendor/jquery-ui/jquery-ui.js',
+            //'./vendor/jquery-ui/jquery-ui.js',
             './src/js/custom.js'
         ])
+        .pipe(babel({
+            comments: false,
+            presets: ['@babel/env']
+        }))
         .pipe(stripJs())                    // remove comentários
         .pipe(concat('scripts.js'))         // mescla arquivos
         .pipe(uglify())                     // minifica js
@@ -67,8 +74,34 @@ function tarefasHTML() {
         .pipe(gulp.dest('./dist'));
 }
 
-exports.styles = tarefasCSS
+//gulp.task('serve', function(){
+
+  //  browserSync.init({
+    //    server: {
+      //      baseDir: "./dist"
+        //}
+    //})
+    //gulp.watch('./src/**/*').on('change', process)
+    //gulp.watch('./dist/**/*').on('change', process)
+
+//})
+
+//const process = series( tarefasHTML, tarefasJS, tarefasCSS, serve )
+
+
+function serve(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+    });
+    watch('./src/**/*', series(tarefasHTML, tarefasJS, tarefasCSS)).on('change', reload);
+    done();
+}
+
+exports.default = series(tarefasHTML, tarefasJS, tarefasCSS, serve);
 exports.scripts = tarefasJS
 exports.images = tarefasImagem
 
-exports.default = series( tarefasHTML, tarefasJS, tarefasCSS )
+
+//exports.default = process
