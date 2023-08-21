@@ -99,7 +99,15 @@ function serve(done) {
     done();
 }
 
-exports.default = series(tarefasHTML, tarefasJS, tarefasCSS, serve);
+function end(cb){
+    console.log("tarefas concluídas")
+    return cb()
+}
+
+
+
+exports.default = series(tarefasHTML, tarefasJS, tarefasCSS, serve, end);
+
 exports.scripts = tarefasJS
 exports.images = tarefasImagem
 
