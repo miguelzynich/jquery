@@ -11,6 +11,8 @@ const htmlmin = require('gulp-htmlmin')
 const babel = require('gulp-babel')
 const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
+const sass = require ('gulp-sass')( require('node-sass'))
+const { parallel } = require('gulp');
 
 function tarefasCSS(cb) {
 
@@ -19,13 +21,22 @@ function tarefasCSS(cb) {
             './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
             './vendor/owl/css/owl.css',
             './vendor/jquery-ui/jquery-ui.css',
-            './src/css/style.css'
         ])
         .pipe(stripCss())                   // remove comentários
-        .pipe(concat('styles.css'))         // mescla arquivos
+        .pipe(concat('libs.css'))         // mescla arquivos
         .pipe(cssmin())                     // minifica css
         .pipe(rename({ suffix: '.min'}))    // styles.min.css
         .pipe(gulp.dest('./dist/css'))      // cria arquivo em novo diretório
+
+}
+
+function tarefasSASS(cb){
+
+    gulp.src('./src/scss/**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./dist/css'))
+
+    cb()
 
 }
 
@@ -99,17 +110,30 @@ function serve(done) {
     done();
 }
 
+function reloadBrowser(done) {
+    browserSync.reload(); // Recarrega o navegador
+    done();
+}
+
 function end(cb){
     console.log("tarefas concluídas")
     return cb()
 }
 
 
+function watchFiles() {
+    watch('./src/**/*.html', series(tarefasHTML, reloadBrowser));
+    watch('./src/js/**/*.js', series(tarefasJS, reloadBrowser));
+    watch('./src/scss/**/*.scss', series(tarefasSASS, reloadBrowser));
+    // Adicione qualquer outra tarefa que você deseja assistir e recarregar aqui
+}
 
-exports.default = series(tarefasHTML, tarefasJS, tarefasCSS, serve, end);
+
+exports.default = parallel(tarefasHTML, tarefasJS, tarefasCSS, tarefasSASS, serve, end);
 
 exports.scripts = tarefasJS
+exports.styles = tarefasCSS
 exports.images = tarefasImagem
-
+exports.sass = tarefasSASS
 
 //exports.default = process
