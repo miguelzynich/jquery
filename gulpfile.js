@@ -63,6 +63,8 @@ function tarefasJS(){
 
 
 function tarefasImagem(){
+
+    console.log()
     
     return gulp.src('./src/images/*')
         .pipe(image({
@@ -106,7 +108,7 @@ function serve(done) {
             baseDir: "./dist"
         }
     });
-    watch('./src/**/*', series(tarefasHTML, tarefasJS, tarefasCSS)).on('change', reload);
+    watch('./src/**/*', series(tarefasHTML, tarefasImagem, tarefasJS, tarefasCSS)).on('change', reload);
     done();
 }
 
@@ -129,7 +131,7 @@ function watchFiles() {
 }
 
 
-exports.default = parallel(tarefasHTML, tarefasJS, tarefasCSS, tarefasSASS, serve, end);
+exports.default = series(tarefasHTML, tarefasJS, tarefasCSS, tarefasImagem, tarefasSASS, serve, end);
 
 exports.scripts = tarefasJS
 exports.styles = tarefasCSS
